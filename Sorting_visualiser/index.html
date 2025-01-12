@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sorting Algorithm Visualizer</h1>
+
+        <!-- Controls for input -->
+        <div class="controls">
+            <div class="control-input">
+                <label class="text-style"for="array-size">Array Size:</label>
+                <input class ="box"type="number" id="array-size" min="5" max="50" value="10">
+            </div>
+            <div class="control-input">
+                <label class="text-style" for="array-elements">Array Elements (comma-separated):</label>
+                <input class ="box" type="text" id="array-elements" placeholder="Enter array values">
+            </div>
+            <div class="control-input">
+                <label class="text-style" for="sort-type">Choose Sorting Algorithm:</label>
+                <select class ="box" id="sort-type" onchange="displayComplexity()">
+                    <option value="selection">Selection Sort</option>
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                    <option value="shell">Shell Sort</option>
+                    <option value="heap">Heap Sort</option>
+                </select>
+            </div>
+            <!-- Blinking buttons -->
+            <button class="blinking" onclick="generateArray()">Generate Array</button>
+            <button class="blinking" onclick="startSort()">Sort Array</button>
+        </div>
+
+        <div class="control-input">
+            <label class="text-style"for="speed">Speed:</label>
+            <input type="range" id="speed" min="100" max="1000" value="500">
+        </div>
+
+        <!-- Visualizer for the sorting process -->
+        <div class="visualizer" id="visualizer"></div>
+
+        <!-- Button to reset and go back to input -->
+        <button class="blinking" onclick="reset()">Reset</button>
+
+        <!-- Algorithm complexity display -->
+        <div id="complexity-display">
+            <h3 class="header2">Algorithm Complexities</h3>
+            <div>
+                <label class="text-style" for="best-case">Best Case:</label>
+                <span id="best-case"></span>
+            </div>
+            <div>
+                <label class="text-style" for="average-case">Average Case:</label>
+                <span id="average-case"></span>
+            </div>
+            <div>
+                <label class="text-style" for="worst-case">Worst Case:</label>
+                <span id="worst-case"></span>
+            </div>
+            <div>
+                <label class="text-style" for="space-complexity">Space Complexity:</label>
+                <span id="space-complexity"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-style" id="step-counter">Steps: 0</div>
+
+    <script src=script.js>
+    
+    </script>
+</body>
+</html>
